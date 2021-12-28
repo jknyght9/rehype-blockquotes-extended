@@ -1,0 +1,157 @@
+.blockquote {
+    margin-bottom: 1em;
+    padding: 15px 30px 15px 15px;
+    border-radius: .5rem;
+    margin-right: 15px;
+
+    h5 {
+        margin-top: 0;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    &-icon {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 0.2em;
+    }
+
+    &-icon svg {
+        display: inline-block;
+        width: 22px;
+        height: 22px;
+        stroke-width: 0;
+    }
+
+    &-content > :last-child {
+        margin-bottom: 0;
+        white-space: pre-wrap
+    }
+
+    &-answer {
+        background-color: rgba(182, 148, 12, 0.1);
+        border-left: 10px solid #b6940d;
+    
+        h5 {
+            color: #b6940d;
+        }
+
+        &.blockquote-icon svg {
+            stroke: #b6940d;
+            fill: #b6940d;
+        }
+    }
+
+    &-caution {
+        background-color: rgba(230, 126, 34, 0.1);
+        border-left: 10px solid #e67e22;
+
+        h5 {
+            color: #e67e22;
+        }
+
+        &.blockquote-icon svg {
+            stroke: #e67e22;
+            fill: #e67e22;
+        }
+    }
+
+    &-important {
+        background-color: rgba(52, 152, 219, 0.1);
+        border-left: 10px solid #3498db;
+        
+        h5 {
+            color: #3498db;
+        }
+
+        &.blockquote-icon svg {
+            stroke: #3498db;
+            fill: #3498db;
+        }
+    }
+
+    &-note {
+        background-color: rgba(52, 152, 219, 0.1);
+        border-left: 10px solid #3498db;
+
+        h5 {
+            color: #3498db;
+        }
+
+        &.blockquote-icon svg {
+            stroke: #3498db;
+            fill: #3498db;
+        }
+    }
+
+    &-question {
+        background-color: rgba(166, 52, 219, 0.1);
+        border-left: 10px solid #8a34db;
+
+        h5 {
+            color: #8a34db;
+        }
+
+        &.blockquote-icon svg {
+            stroke: #8a34db;
+            fill: #8a34db;
+        }
+    }
+
+    &-quote {
+        background-color: rgba(166, 195, 214, 0.1);
+        border-left: 10px solid #47525a;
+
+        h5 {
+            color: #47525a;
+        }
+
+        &.blockquote-icon svg {
+            stroke: #47525a;
+            fill: #47525a;
+        }
+    }
+
+    &-success {
+        background-color: rgba(46, 204, 113, 0.1);
+        border-left: 10px solid #26a85d;
+
+        h5 {
+            color: #26a85d;
+        }
+
+        &.blockquote-icon svg {
+            stroke: #26a85d;
+            fill: #26a85d;
+        }
+    }
+
+    &-tip {
+        background-color: rgba(46, 204, 113, 0.1);
+        border-left: 10px solid #26a85d;
+
+        h5 {
+            color: #26a85d;
+        }
+
+        &.blockquote-icon svg {
+            stroke: #26a85d;
+            fill: #26a85d;
+        }
+    }
+
+    &-warning {
+        background-color: rgba(231, 76, 60, 0.1);
+        border-left: 10px solid #e74c3c;
+
+        h5 {
+            color: #e74c3c;
+        }
+
+        &.blockquote-icon svg {
+            stroke: #e74c3c;
+            fill: #e74c3c;
+        }
+    }
+}
