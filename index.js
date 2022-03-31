@@ -23,15 +23,35 @@ export default function rehypeBlockquoteExtended() {
                 bqType = Object.entries(extendedTypes).find(([t,{}]) => t.match(node.properties.class))[1];
             if (!bqType) return;
 
-            const newBq = h('div', {class: 'blockquote blockquote-'.concat(bqType.keyword)}, [
-                h('div', {class: 'blockquote-heading'}, [
-                    h('h5', '', [
-                        [h('span', {class: 'blockquote-icon'}, [bqType.icon])].concat(formatKeyword(bqType.keyword))
-                    ])
-                ]),
-                h('div', {class: 'blockquote-content'}, children)
-            ]);
-            parent.children.splice(index, 1, newBq);
+            if (bqType.keyword === "answer") {
+                parent.children.splice(index, 1, 
+                    h('div', {class: 'blockquote blockquote-'.concat(bqType.keyword)}, [
+                        h('div', {class: 'blockquote-heading'}, [
+                            h('h5', '', [
+                                [h('span', {class: 'blockquote-icon'}, [bqType.icon])].concat(formatKeyword(bqType.keyword))
+                            ])
+                        ]),
+                        h('div', {class: 'blockquote-content'}, [
+                            h('details', '', [
+                                h('summary', '', "Click for answer"),
+                                children
+                            ])
+                        ])
+                    ]));
+            }
+            else {
+                parent.children.splice(index, 1,
+                    h('div', {class: 'blockquote blockquote-'.concat(bqType.keyword)}, [
+                        h('div', {class: 'blockquote-heading'}, [
+                            h('h5', '', [
+                                [h('span', {class: 'blockquote-icon'}, [bqType.icon])].concat(formatKeyword(bqType.keyword))
+                            ])
+                        ]),
+                        h('div', {class: 'blockquote-content'}, children)
+                    ]));
+            }
+
+            // parent.children.splice(index, 1, newBq);
             return [SKIP, index];
         });
     }
